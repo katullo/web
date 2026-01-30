@@ -8,6 +8,12 @@ export default defineNuxtConfig({
     "@vite-pwa/nuxt",
   ],
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      signalingUrl:
+        process.env.SIGNALING_URL ?? "wss://public.localsend.org/v1/ws",
+    },
+  },
   app: {
     head: {
       link: [
