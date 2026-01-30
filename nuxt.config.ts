@@ -55,6 +55,12 @@ export default defineNuxtConfig({
         name: "한국어",
       },
       {
+        code: "no",
+        language: "no-NO",
+        file: "no.json",
+        name: "Norsk",
+      },
+      {
         code: "hu",
         language: "hu-HU",
         file: "hu.json",
