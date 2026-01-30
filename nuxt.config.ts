@@ -60,6 +60,12 @@ export default defineNuxtConfig({
         file: "tr.json",
         name: "Türkçe",
       },
+      {
+        code: "pt",
+        language: "pt-BR",
+        file: "pt.json",
+        name: "Português",
+      }
     ],
   },
   nitro: {
