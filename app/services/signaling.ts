@@ -124,11 +124,11 @@ export type ClientInfoWithoutId = {
 export type ClientInfo = ClientInfoWithoutId & { id: string };
 
 export enum PeerDeviceType {
-  mobile = "mobile",
-  desktop = "desktop",
-  web = "web",
-  headless = "headless",
-  server = "server",
+  mobile = "MOBILE",
+  desktop = "DESKTOP",
+  web = "WEB",
+  headless = "HEADLESS",
+  server = "SERVER",
 }
 
 export type WsServerMessage =
