@@ -88,7 +88,13 @@ export default defineNuxtConfig({
         language: "pt-BR",
         file: "pt.json",
         name: "Português",
-      }
+      },
+      {
+        code: "zh",
+        language: "zh-CN",
+        file: "zh-cn.json",
+        name: "简体中文",
+      },
     ],
   },
   nitro: {
