@@ -63,9 +63,11 @@ export const store = reactive({
 });
 
 export async function setupConnection({
+  url,
   info,
   onPin,
 }: {
+  url: string;
   info: ClientInfoWithoutId;
   onPin: () => Promise<string | null>;
 }) {
@@ -73,15 +75,15 @@ export async function setupConnection({
   store._onPin = onPin;
   if (!store._loopStarted) {
     store._loopStarted = true;
-    connectionLoop().then(() => console.log("Connection loop ended"));
+    connectionLoop(url).then(() => console.log("Connection loop ended"));
   }
 }
 
-async function connectionLoop() {
+async function connectionLoop(url: string) {
   while (true) {
     try {
       store.signaling = await SignalingConnection.connect({
-        url: "wss://public.localsend.org/v1/ws",
+        url: url,
         info: store._proposingClient!,
         onMessage: (data: WsServerMessage) => {
           switch (data.type) {

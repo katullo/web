@@ -102,6 +102,8 @@ definePageMeta({
   description: "index.seo.description",
 });
 
+const runtimeConfig = useRuntimeConfig();
+
 const { t } = useI18n();
 
 const { open: openFileDialog, onChange } = useFileDialog();
@@ -194,6 +196,7 @@ onMounted(async () => {
   };
 
   await setupConnection({
+    url: runtimeConfig.public.signalingUrl,
     info,
     onPin: async () => {
       return prompt(t("index.enterPin"));
